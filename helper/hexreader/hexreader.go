@@ -19,7 +19,7 @@ func NewHexReader(r io.Reader) *HexReader {
 
 // Read reads the hex string from the underlying io.Reader and decodes to p
 func (hr *HexReader) Read(p []byte) (int, error) {
-	b := make([]byte, len(p))
+	b := make([]byte, len(p)*2)
 	n, err := hr.r.Read(b)
 	if err != nil {
 		return n, err
